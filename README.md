@@ -9,8 +9,8 @@ P02-VehiclesAPI Project: This folder ontains the instructions that were followed
 
 > **Note**: This project was carried out using the **Starter Pack** provided by Udacity during the **Web Services and APIs module**.
 
-##### - The official repository which can be found at [this link](https://github.com/udacity/nd035-C2-Web-Services-and-APIs-Exercises-and-Project-Starter/tree/master);
-##### - or simply in an IDE by cloning it through [this link](https://blog.jetbrains.com/idea/2020/10/clone-a-project-from-github/) for this purpose.
+- The official repository which can be found at [this link](https://github.com/udacity/nd035-C2-Web-Services-and-APIs-Exercises-and-Project-Starter/tree/master);
+- or simply in an IDE by cloning it through [this link](https://blog.jetbrains.com/idea/2020/10/clone-a-project-from-github/) for this purpose.
 
 #### License
 
