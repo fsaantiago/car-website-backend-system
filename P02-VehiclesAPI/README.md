@@ -14,4 +14,4 @@ should be running at once for full operation. Further instructions are available
 
 ## Dependencies
 
-The project requires the use of Maven and Spring Boot, along with Java v11.
+The project requires the use of Maven and Spring Boot, along with Java v17.
