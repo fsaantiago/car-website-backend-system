@@ -6,6 +6,8 @@ view of vehicle details including price and address.
 ### VehiclesApiApplication
 This initiates the Vehicles API as a Spring Boot application. Additionally, it sets up a few car manufacturers in the `ManufacturerRepository` and creates web clients to connect to the Maps and Pricing services.
 
+<img src="/images/vehicle-api.jpeg">
+
 `vehicles.api`
 
 ### API Error
