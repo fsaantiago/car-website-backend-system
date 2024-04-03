@@ -5,6 +5,7 @@ Instructions for importing the project can be accessed through [this link](https
 This repository is related to the Java Web Developer (ND035), Course - **Web Services and APIs**
 
 It contains the following folder:
+
 P02-VehiclesAPI Project: This folder ontains the instructions that were followed to build the project correctly.
 
 > **Note**: This project was carried out using the **Starter Pack** provided by Udacity during the **Web Services and APIs module**.
