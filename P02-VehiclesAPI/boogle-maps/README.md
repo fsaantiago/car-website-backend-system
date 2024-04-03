@@ -1,26 +1,30 @@
-# Boogle Maps
+### Code Overview: Location Service (Boogle Maps)
 
-This is a Mock that simulates a Maps WebService where, given a latitude
-longitude, will return a random address.
+Within the `boogle-maps` folder, you'll discover the code pertinent to location service. This service functions as a Mock to replicate a Maps WebService. It operates on the premise that, when provided with a latitude and longitude, it will furnish a randomized address.
 
-## Instructions
+While you're not required to enact any implementation as part of this application, let's briefly examine the files included. It's worth noting that each package resides within `com.udacity`; hence, we'll omit that portion of the package name in the descriptions below.
 
-Via shell it can be started using
+<img src="/images/boogle-map.png">
 
-```
-$ mvn clean package
-```
+## Boogle Maps
 
-```
-$ java -jar target/boogle-maps-0.0.1-SNAPSHOT.jar
-```
+`boogle.maps`
 
-The service is available by default on port `9191`. You can check it on the
-command line by using
+#### Address:
 
-```
-$ curl http://localhost:9191/maps\?lat\=20.0\&lon\=30.0
-``` 
+This class defines the Address entity, primarily comprising private variables such as address, city, state, and zip code. Notably, latitude and longitude are not stored here; they are obtained from the Vehicles API.
 
-You can also import it as a Maven project on your preferred IDE and
-run the class `BoogleMapsApplication`.
+#### BoogleMapsApplication:
+
+This class initializes Boogle Maps as a Spring Boot application.
+
+#### MapsController:
+
+This serves as the actual REST controller for the application. It handles `GET` requests and responds accordingly. In our scenario, being a Mock of a WebService, it simply returns a random address from the repository.
+
+#### MockAddressRepository:
+
+Repositories typically offer data persistence while the web service is operational. In this instance, this Mock repository selects a random address from the `ADDRESSES` array defined in the file.
+
+
+
