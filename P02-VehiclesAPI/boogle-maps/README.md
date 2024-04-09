@@ -1,8 +1,8 @@
-### Code Overview: Location Service (Boogle Maps)
+### isão Geral do Código: Serviço de Localização (Boogle Maps)
 
-Within the `boogle-maps` folder, you'll discover the code pertinent to location service. This service functions as a Mock to replicate a Maps WebService. It operates on the premise that, when provided with a latitude and longitude, it will furnish a randomized address.
+Dentro da pasta `boogle-maps`, você encontrará o código pertinente ao serviço de localização. Este serviço funciona como um Mock para replicar um WebService de Mapas. Ele opera sob a premissa de que, ao ser fornecido com uma latitude e longitude, ele fornecerá um endereço aleatório.
 
-While you're not required to enact any implementation as part of this application, let's briefly examine the files included. It's worth noting that each package resides within `com.udacity`; hence, we'll omit that portion of the package name in the descriptions below.
+Embora você não seja obrigado a implementar nenhuma implementação como parte deste aplicativo, vamos examinar brevemente os arquivos incluídos. Vale ressaltar que cada pacote reside dentro de`com.udacity`; portanto, omitiremos essa parte do nome do pacote nas descrições abaixo.
 
 <img src="/images/boogle-map.png">
 
@@ -10,21 +10,22 @@ While you're not required to enact any implementation as part of this applicatio
 
 `boogle.maps`
 
-#### Address:
+#### Endereço:
 
-This class defines the Address entity, primarily comprising private variables such as address, city, state, and zip code. Notably, latitude and longitude are not stored here; they are obtained from the Vehicles API.
+Esta classe define a entidade de Endereço, composta principalmente por variáveis privadas como endereço, cidade, estado e código postal. Notavelmente, a latitude e a longitude não são armazenadas aqui; elas são obtidas da API de Veículos.
+
 
 #### BoogleMapsApplication:
 
-This class initializes Boogle Maps as a Spring Boot application.
+Esta classe inicializa o Boogle Maps como um aplicativo Spring Boot.
 
 #### MapsController:
 
-This serves as the actual REST controller for the application. It handles `GET` requests and responds accordingly. In our scenario, being a Mock of a WebService, it simply returns a random address from the repository.
+Este serve como o controlador REST real para o aplicativo. Ele lida com solicitações `GET` e responde de acordo. Em nosso cenário, sendo um Mock de um WebService, ele simplesmente retorna um endereço aleatório do repositório.
 
 #### MockAddressRepository:
 
-Repositories typically offer data persistence while the web service is operational. In this instance, this Mock repository selects a random address from the `ADDRESSES` array defined in the file.
+Os repositórios geralmente oferecem persistência de dados enquanto o serviço web está operacional. Neste caso, este repositório Mock seleciona um endereço aleatório da matriz `ADDRESSES` definida no arquivo.
 
 
 
