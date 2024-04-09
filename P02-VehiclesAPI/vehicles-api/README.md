@@ -1,31 +1,30 @@
 # Vehicles API
 
-A REST API to maintain vehicle data and to provide a complete
-view of vehicle details including price and address.
+Uma API REST para manter dados de veículos e fornecer uma visão completa dos detalhes do veículo, incluindo preço e endereço.
 
 ### VehiclesApiApplication
-This initiates the Vehicles API as a Spring Boot application. Additionally, it sets up a few car manufacturers in the `ManufacturerRepository` and creates web clients to connect to the Maps and Pricing services.
+Isso inicia a API de Veículos como uma aplicação Spring Boot. Além disso, configura alguns fabricantes de carros no `ManufacturerRepository` e cria clientes web para se conectar aos serviços de Maps e Pricing.
 
 <img src="/images/vehicle-api.jpeg">
 
 `vehicles.api`
 
 ### API Error
-Defines methods to quickly return errors and other messages from the Vehicles API.
+Define métodos para retornar rapidamente erros e outras mensagens da API de Veículos.
 
 ### CarController
-This is the actual REST controller for the application. It handles `GET`, `POST`, `PUT`, and `DELETE` requests (using methods in the `CarService`) and determines how they are responded to (including formatting with `CarResourceAssembler`). You will implement these methods in your code.
+Este é o controlador REST real para o aplicativo. Ele lida com solicitações `GET`, `POST`, `PUT`, and `DELETE` (usando métodos no `CarService`) e determina como elas são respondidas (incluindo formatação com `CarResourceAssembler`). Você implementará esses métodos em seu código.
 
 ### CarResourceAssembler
-This assists in mapping the `CarController` to the `Car` class to facilitate returning the API response.
+Isso auxilia na mapeamento do `CarController` para a classe `Car` para facilitar o retorno da resposta da API.
 
 ### ErrorController
-This aids in handling any invalid arguments provided to the API.
+Isso ajuda a lidar com quaisquer argumentos inválidos fornecidos à API.
 
 `vehicles.client.maps`
 
 ### Address
-Similar to the `Address` file for boogle-maps, this defines a class for use with the `MapsClient`.
+Similar ao arquivo `Address` para boogle-maps, isso define uma classe para uso com o `MapsClient`.
 
 ### MapsClient
 Manages the format of a GET request to the `boogle-maps` WebClient to retrieve location data.
@@ -33,28 +32,28 @@ Manages the format of a GET request to the `boogle-maps` WebClient to retrieve l
 `vehicles.client.prices`
 
 ### Price
-Similar to the `Price` file for `pricing-service`, this declares a class for use with the PriceClient.
+Similar ao arquivo `Price` para `pricing-service`, isso declara uma classe para uso com o PriceClient.
 
 ### PriceClient
-Handles the format of a GET request to the `pricing-service` WebClient to obtain pricing data.
+Gerencia o formato de uma solicitação GET para o WebClient `pricing-service` para recuperar dados de localização.
 
 `vehicles.domain`
 
 ### Condition
-Lists the available values for the condition of a car (New oBoogle).
+Lista os valores disponíveis para a condição de um carro (New oBoogle).
 
 ### Location
-Declares information about the location of a vehicle. This differs from the Address class used by `boogle-maps`, primarily focusing on storing latitude and longitude values. As the data gathered from boogle-maps, such as `address`, is annotated as `@Transient`, this data is not stored until the next time `boogle-maps` is called.
+Declara informações sobre a localização de um veículo. Isso difere da classe Address usada pelo `boogle-maps`, focando principalmente em armazenar valores de latitude e longitude. Como os dados coletados do boogle-maps, como `address`, são anotados como `@Transient`, esses dados não são armazenados até a próxima vez que o `boogle-maps` for chamado.
 
 `vehicles.domain.car`
 ### Car
-Defines certain information about a given vehicle, mainly details about the car entry itself (such as `CreatedAt`). Note that a separate class, `Details`, also stores additional details about the car specific to make, color, and model. Similar to `Location` with data like address, this uses a `@Transient` tag with `price`, requiring a call to the Pricing Service whenever a price is desired.
+Define informações específicas sobre um determinado veículo, principalmente detalhes sobre a própria entrada do carro (como `CreatedAt`). Observe que uma classe separada, `Details`, também armazena detalhes adicionais sobre o carro específicos de fabricante, cor e modelo. Similar à  `Location` com dados como endereço, isso usa uma tag `@Transient` com `price`, exigindo uma chamada ao Serviço de Preços sempre que um preço for desejado.
 
 ### CarRepository
-This repository provides data persistence while the web service is operational, primarily for vehicle information received in the `CarService`.
+Este repositório fornece persistência de dados enquanto o serviço web está operacional, principalmente para informações de veículos recebidas no `CarService`.
 
 ### Details
-Specifies additional vehicle details, primarily related to the car build itself, such as `fuelType` and `mileage`.
+Especifica detalhes adicionais do veículo, principalmente relacionados à construção do carro em si, como tipo de `fuelType` e `mileage`.
 
 `vehicles.domain.manufacturer`
 ### Manufacturer
@@ -68,35 +67,35 @@ This repository provides data persistence while the web service is operational, 
 Creates a `CarNotFoundException` that can be thrown when an issue arises in the `CarService`.
 
 ### CarService
-The Car Service performs much of the code's work. It can retrieve either the entire list of vehicles or a single vehicle by ID (including calls to the maps and pricing web clients). It can also save updated vehicle information and delete an existing car. All of these actions are initiated by the CarController based on queries to the REST API. You will implement most of these methods yourself.
+O Serviço de Carro realiza grande parte do trabalho do código. Ele pode recuperar toda a lista de veículos ou um único veículo por ID (incluindo chamadas aos clientes web de maps e pricing). Também pode salvar informações de veículo atualizadas e excluir um carro existente. Todas essas ações são iniciadas pelo CarController com base em consultas à API REST. Você implementará a maioria desses métodos por conta própria.
 
 `test/../vehicles.api`
 ### CarControllerTest
-Here, various methods performed by the CarController are tested by creating mock calls to the Vehicles API. You will implement some of these methods yourself for practice in building your own tests.
+Aqui, vários métodos realizados pelo CarController são testados criando chamadas de mock para a API de Veículos. Você implementará alguns desses métodos por conta própria para praticar na construção de seus próprios testes.
 
 ### Vehicles API Instructions
-In this project, you will create a REST-based Vehicles API that communicates with a location and pricing service using Spring Boot. Additionally, you'll convert the existing Pricing Service API into a microservice registered on a Eureka server. Follow the [README and code instructions](https://github.com/fsaantiago/car-website-backend-system/blob/main/P02-VehiclesAPI/vehicles-api/README.md) and ensure you have completed all items as per the rubric.
+Neste projeto, você criará uma API de Veículos baseada em REST que se comunica com um serviço de localização e preços usando o Spring Boot. Além disso, você converterá a API de Serviços de Preços existente em um microserviço registrado em um servidor Eureka. Siga as [instruções do README e do código](https://github.com/fsaantiago/car-website-backend-system/blob/main/P02-VehiclesAPI/vehicles-api/README.md) e certifique-se de ter concluído todos os itens conforme a rubrica.
 
 ### Convert the Pricing Service
-Transform the Pricing Service into a microservice registered on a Eureka server. Also, add an additional test for the microservice.
+Transforme o Serviço de Preços em um microserviço registrado em um servidor Eureka. Além disso, adicione um teste adicional para o microserviço.
 
 ### Test and Document the Vehicles API
-Add tests for the CarController class.
-Utilize Swagger to implement API documentation for the Vehicles API.
+Adicione testes para a classe CarController.
+Utilize o Swagger para implementar a documentação da API para a API de Veículos.
 
-### Run the applications
-Note that the Boogle Maps, Pricing Service, and Vehicles API applications must all be running for operations to perform correctly, although they can launch independently.
+### Executando as aplicações
+Observe que as aplicações Boogle Maps, Pricing Service e Vehicles API devem estar em execução para que as operações sejam realizadas corretamente, embora possam ser iniciadas de forma independente.
 
-You can either use them in separate windows in your favorite IDE or use the following commands:
+Você pode usar cada uma delas em janelas separadas em sua IDE favorita ou usar os seguintes comandos:
 
-1. `$ mvn clean package` (run this in each directory containing the separate applications)
+1. `$ mvn clean package` (execute isso em cada diretório que contém as aplicações separadas)
 
 2. Boogle Maps:
 ```
 $ java -jar target/boogle-maps-0.0.1-SNAPSHOT.jar
 ```
 
-The service is available by defaultmvn port 9191. You can check it on the command line by using `$ curl http://localhost:9191/maps\?lat\=20.0\&lon\=30.0`
+O serviço está disponível por padrão na porta 9191. Você pode verificar isso no terminal usando `$ curl http://localhost:9191/maps\?lat\=20.0\&lon\=30.0`
 
 Pricing Service:
 ```
@@ -107,24 +106,23 @@ Vehicles API:
 ```
 $ java -jar target/vehicles-api-0.0.1-SNAPSHOT.jar
 ```
-When the Swagger API documentation is implemented, it should be available at: http://localhost:8080/swagger-ui.html
+Quando a documentação da API Swagger estiver implementada, estará disponível em: http://localhost:8080/swagger-ui.html
 
 ## Features
 
-- REST API exploring the main HTTP verbs and features
+- API REST explorando os principais verbos HTTP e recursos
 - Hateoas
-- Custom API Error handling using `ControllerAdvice`
-- Swagger API docs
+- Manipulação de erros personalizada da API usando ControllerAdvice
+- Documentação da API Swagger
 - HTTP WebClient
-- MVC Test
-- Automatic model mapping
+- Teste MVC
+- Mapeamento automático de modelo
 
 ## Instructions
 
-#### Run the Code
+#### Executando o código
 
-To properly run this application you need to start the Orders API and
-the Service API first.
+Para executar corretamente esta aplicação, você precisa iniciar primeiro a Orders API e a Service API.
 
 ```
 $ mvn clean package
@@ -134,13 +132,13 @@ $ mvn clean package
 $ java -jar target/vehicles-api-0.0.1-SNAPSHOT.jar
 ```
 
-Import it in your favorite IDE as a Maven Project.
+Importe-o em sua IDE favorita como um projeto Maven.
 
-## Operations
+## Operações
 
 Swagger UI: http://localhost:8080/swagger-ui.html
 
-### Create a Vehicle
+### Crie um veículo
 
 `POST` `/cars`
 
@@ -169,15 +167,15 @@ Swagger UI: http://localhost:8080/swagger-ui.html
 }
 ```
 
-### Retrieve a Vehicle
+### Recupere um Vehicle
 
 `GET` `/cars/{id}`
 
-This feature retrieves the Vehicle data from the database
-and access the Pricing Service and Boogle Maps to enrich
-the Vehicle information to be presented
+Este recurso recupera os dados do Veículo do banco de dados
+e acessa o Pricing Service e o Boogle Maps para enriquecer
+as informações do Veículo a serem apresentadas
 
-### Update a Vehicle
+### Atualize o veículo
 
 `PUT` `/cars/{id}`
 
@@ -206,7 +204,7 @@ the Vehicle information to be presented
 }
 ```
 
-### Delete a Vehicle
+### Apague o veículo
 
 `DELETE` `/cars/{id}`
 
