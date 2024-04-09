@@ -1,24 +1,24 @@
 ## Eureka Server
 
-Eureka Server is an application that holds the information about all client-service applications. Every Micro service will register into the Eureka server and Eureka server knows all the client applications running on each port and IP address.
+O Servidor Eureka é um aplicativo que contém as informações sobre todas as aplicações cliente-serviço. Cada microsserviço se registra no servidor Eureka e o servidor Eureka conhece todas as aplicações cliente em execução em cada porta e endereço IP.
 
 <img src="/images/eureka-server.png">
 
 ### Details
 
-- __EurekaServerApplication__: The main class that runs the Eureka Server application. It has `@EnableEurekaServer` to enable it as Eureka Server.
+- __EurekaServerApplication__: A classe principal que executa a aplicação do Servidor Eureka. Ele possui  `@EnableEurekaServer` para habilitá-lo como Servidor Eureka.
 
-- __resoures\applications.properties__: It has below properties for Eureka server:
-````propierties
+- __resoures\applications.properties__: Possui as seguintes propriedades para o Eureka server:
+````propriedades
 eureka.client.register-with-eureka=false
 eureka.client.fetch-registry=false
 logging.level.com.netflix.eureka=ON
 logging.level.com.netflix.discovery=ON
 ````
 
-### Run the application
+### Executar a aplicação
 
-Below are the commands to build and run this project.
+Abaixo estão os comandos para construir e executar este projeto.
 ```
 $ mvn clean package
 ```
@@ -27,6 +27,5 @@ $ mvn clean package
 $ java -jar target/eurekaServer-0.0.1-SNAPSHOT.jar
 ```
 
-
-You can also import it as a Maven project on your preferred IDE and run the class `EurekaServerApplication`.
+Você também pode importá-lo como um projeto Maven em sua IDE preferida e executar a classe `EurekaServerApplication`.
 
