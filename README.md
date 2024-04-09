@@ -1,29 +1,22 @@
-## About this Repository
+## Projeto de API de Veículos - Nanodegree, Java Web Developer (Udacity) 
 
-Instructions for importing the project can be accessed through [this link](https://www.jetbrains.com/help/idea/import-project-or-module-wizard.html). However, I recommend accessing the repository to have access to all instructions in full.
+Projeto desenvolvido com o objetivo de criar uma API de veículos, levando em consideração as funcionalidades comuns de gerenciamento de inventário de veículos. Inspirado em sistemas de e-commerce e gestão de estoque, o projeto abrange desde as operações básicas de [CRUD](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) (Create, Read, Update, and Delete) até integrações com APIs externas para obtenção de informações adicionais, como localização e precificação dos veículos.
 
-This repository is related to the Java Web Developer (ND035), Course - **Web Services and APIs**
-
-It contains the following folder:
-
-P02-VehiclesAPI Project: This folder contains the instructions that were followed to build the project correctly.
-
-
-### Project Overview
-
-In this project, you'll utilize your skills in Spring Boot, APIs, documentation, and testing to create a *Vehicles API*. This API will serve as a centralized endpoint for managing vehicle inventory. The main functionality of the Vehicles API involves performing [CRUD operations](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) (Create, Read, Update, and Delete) for vehicle details such as make, model, and color. Additionally, it will integrate with other APIs to gather location and pricing information. Your tasks include developing a RESTful API for the Vehicles module and transforming a Pricing Service API into a microservice.
+O escopo do projeto inclui a implementação de uma API RESTful para lidar com as operações de gerenciamento de veículos, como adicionar, visualizar, atualizar e excluir registros de veículos. Além disso, o projeto envolve a integração com serviços externos para enriquecer os dados dos veículos e proporcionar uma experiência mais completa para os usuários da API.
 
 <img src="/images/application.png">
 
-That application is capable of seamless communication with external services. Furthermore, the application will feature Swagger-based API documentation for easy viewing and usage.
+Para mais detalhes sobre o projeto, consulte a documentação completa, que inclui todas as etapas e funcionalidades implementadas, clicando neste [Link](https://github.com/fsaantiago/car-website-backend-system/tree/main/P02-VehiclesAPI).
 
-Throughout this guide, we'll provide a concise overview of the code for each application component involved in the project. Subsequently, we'll detail the instructions for executing the project. If you prefer, you can skip the code overview sections and proceed directly to the project instructions. Access the project code from the Github repository and navigate to the **P02-VehiclesAPI folder** for reference.
+## Tecnologias Utilizadas:
 
-That application is capable of seamless communication with external services. Furthermore, the application will feature Swagger-based API documentation for easy viewing and usage.
+**Linguagem de Programação:** Java
 
-> **Note**: This project was carried out using the **Starter Pack** provided by Udacity during the **Web Services and APIs module**.
+**Framework:** Spring Boot
 
-Throughout this guide, we'll provide a concise overview of the code for each application component involved in the project. Subsequently, we'll detail the instructions for executing the project. If you prefer, you can skip the code overview sections and proceed directly to the project instructions. Access the project code from the [Github repository](https://github.com/udacity/nd035-C2-Web-Services-and-APIs-Exercises-and-Project-Starter/tree/master) and navigate to the `P02-VehiclesAPI` folder for reference.
+**Banco de Dados:** PostgreSQL
+
+**Ferramentas de Desenvolvimento:** IntelliJ IDEA, Postman
 
 #### License
 
